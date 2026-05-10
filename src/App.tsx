@@ -22,7 +22,7 @@ function App() {
         <div className="container mx-auto px-6 py-16">
           <div className="flex flex-col items-center text-center">
             <img
-              src="/public/kunal sharma.jpg"
+              src="kunal sharma.jpg"
               alt="Kunal Sharma"
               className="w-40 h-40 rounded-full border-4 border-white shadow-lg mb-6 object-cover"
             />
