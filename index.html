@@ -1,13 +1,158 @@
-<!doctype html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Kunal Sharma - Student Portfolio</title>
-  </head>
-  <body>
-    <div id="root"></div>
-    <script type="module" src="/src/main.tsx"></script>
-  </body>
-</html>
+<!DOCTYPE html>
+<html lang="en"><head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Kunal Sharma | ML & Full-Stack Developer</title>
+<meta name="description" content="Kunal Sharma, final-year B.Tech CSE student building ML systems and full-stack products.">
+<meta property="og:title" content="Kunal Sharma | ML & Full-Stack Developer">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500&family=Space+Grotesk:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#0C141F;--panel:#162334;--a:#F5A83B;--a2:#FFC766;--fg:#F2F5F7;--mut:#9DB0C3;--sky:#8FD3E8;--line:rgba(255,255,255,.11);--d:'Space Grotesk',system-ui,sans-serif;--m:'JetBrains Mono',ui-monospace,monospace;color-scheme:dark;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;scroll-padding-top:calc(70px + env(safe-area-inset-top,0px))}
+body{background:var(--bg);color:var(--fg);font:400 16px/1.65 var(--d);overflow-x:hidden}
+p{color:var(--mut)}
+#gl{position:fixed;inset:0;width:100%;height:100%;z-index:0;pointer-events:none}
+nav{position:fixed;top:0;left:0;right:0;z-index:20;display:flex;justify-content:space-between;align-items:center;padding:calc(14px + env(safe-area-inset-top,0px)) 5vw 14px;border-bottom:1px solid transparent;transition:background .3s,border-color .3s}
+nav.s{background:rgba(12,20,31,.62);-webkit-backdrop-filter:blur(14px);backdrop-filter:blur(14px);border-color:var(--line)}
+.logo{font-weight:700;letter-spacing:.04em;color:var(--fg);text-decoration:none}.logo i{color:var(--a);font-style:normal}
+nav div a{font:500 13px var(--m);color:var(--mut);text-decoration:none;margin-left:clamp(14px,2.5vw,30px);transition:color .2s}
+nav div a:hover{color:var(--a2)}
+a:focus-visible,button:focus-visible{outline:2px solid var(--a2);outline-offset:3px}
+main{position:relative;z-index:1}
+section{max-width:1100px;margin:auto;padding:110px 5vw}
+#hero{min-height:100vh;min-height:100svh;display:flex;flex-direction:column;justify-content:center;padding-top:120px}
+#hero>*{animation:up .9s both}#hero>:nth-child(2){animation-delay:.12s}#hero>:nth-child(3){animation-delay:.24s}#hero>:nth-child(4){animation-delay:.36s}#hero>:nth-child(5){animation-delay:.48s}
+@keyframes up{from{opacity:0;transform:translateY(24px)}}
+.eb{font:500 13px var(--m);color:var(--a);margin-bottom:14px}
+h1{font-size:clamp(3.4rem,12.5vw,9rem);line-height:.92;letter-spacing:-.035em;font-weight:700}
+.role{font:400 14px var(--m);color:var(--fg);margin:24px 0 12px}
+.lead{max-width:33rem;font-size:1.1rem}
+.btns{display:flex;gap:12px;flex-wrap:wrap;margin-top:32px}
+.b{font:500 14px var(--m);padding:13px 22px;border-radius:12px;text-decoration:none;border:1px solid var(--line);color:var(--fg);background:rgba(22,35,52,.6);-webkit-backdrop-filter:blur(8px);backdrop-filter:blur(8px);cursor:pointer;transition:transform .2s,box-shadow .2s}
+.b.p{background:var(--a);color:#1a1205;border-color:var(--a);font-weight:700}
+.b:hover{transform:translateY(-2px);box-shadow:0 8px 28px rgba(245,168,59,.25)}
+h2{font-size:clamp(2rem,5vw,3.2rem);letter-spacing:-.02em;line-height:1.1;margin-bottom:34px}
+.g{background:rgba(22,35,52,.55);border:1px solid var(--line);border-radius:20px;padding:26px;-webkit-backdrop-filter:blur(14px);backdrop-filter:blur(14px);box-shadow:inset 0 1px 0 rgba(255,255,255,.08)}
+.two{display:grid;grid-template-columns:1.4fr 1fr;gap:28px;align-items:start}.two p+p{margin-top:14px}
+dl div{display:flex;justify-content:space-between;gap:16px;padding:11px 0;border-bottom:1px solid var(--line)}dl div:last-child{border:0}
+dt{font:400 13px var(--m);color:var(--a)}dd{text-align:right;color:var(--fg);font-size:.95rem}
+.tags{display:flex;flex-wrap:wrap;gap:8px}
+.t{font:400 12px var(--m);padding:6px 12px;border-radius:99px;border:1px solid var(--line);color:var(--fg);background:rgba(255,255,255,.04)}
+.grid3{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:18px}
+.grid3 h3{font:500 13px var(--m);color:var(--sky);margin-bottom:16px}
+.projects{display:grid;grid-template-columns:repeat(2,1fr);gap:18px}
+.card{display:block;width:100%;text-align:left;font:inherit;color:inherit;cursor:pointer;transition:transform .3s,border-color .3s}
+.card:hover,.card:focus-visible{transform:translateY(-4px);border-color:var(--a)}
+.card em{font:400 12px var(--m);color:var(--a);font-style:normal}
+.card h3{font-size:1.45rem;margin:8px 0;letter-spacing:-.01em}
+.card p{margin-bottom:16px;font-size:.95rem}
+.tl{border-left:1px solid var(--line);padding-left:28px;display:grid;gap:28px}
+.tl div{position:relative}.tl div:before{content:"";position:absolute;left:-33px;top:9px;width:9px;height:9px;border-radius:50%;background:var(--a);box-shadow:0 0 14px var(--a)}
+.tl small{font:400 13px var(--m);color:var(--a)}.tl h3{font-size:1.25rem;margin:2px 0}
+form{display:grid;gap:14px;max-width:560px}
+input,textarea{font:inherit;color:var(--fg);background:rgba(12,20,31,.6);border:1px solid var(--line);border-radius:12px;padding:13px 15px;width:100%}
+input:focus,textarea:focus{outline:2px solid var(--a);outline-offset:1px}
+.hp{position:absolute;left:-9999px}
+#st{font:400 13px var(--m);min-height:1.4em;color:var(--sky)}
+.links{margin-top:30px;display:flex;gap:24px;flex-wrap:wrap}.links a{color:var(--a2);font:500 14px var(--m)}
+footer{position:relative;z-index:1;text-align:center;padding:36px 5vw;font:400 12px var(--m);color:var(--mut)}
+.rv{opacity:0;transform:translateY(22px);transition:opacity .7s,transform .7s}.rv.in{opacity:1;transform:none}
+#md{position:fixed;inset:0;z-index:50;display:none;align-items:center;justify-content:center;padding:20px;background:rgba(6,10,16,.6);-webkit-backdrop-filter:blur(10px);backdrop-filter:blur(10px)}
+#md.o{display:flex}
+#md .g{max-width:680px;width:100%;max-height:88vh;overflow:auto;background:var(--panel);animation:pop .3s ease}
+@keyframes pop{from{opacity:0;transform:scale(.96)}}
+#md h3{font-size:2rem;letter-spacing:-.02em;margin:4px 0 14px}
+#md h4{font:500 13px var(--m);color:var(--sky);margin:20px 0 6px}
+#md ul{color:var(--mut);padding-left:18px}
+.x{float:right;padding:8px 14px}
+@media(max-width:760px){.two,.grid3,.projects{grid-template-columns:1fr}#hero{justify-content:flex-start}#md{align-items:flex-end;padding:0}#md .g{border-radius:20px 20px 0 0}}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important;scroll-behavior:auto!important}.rv{opacity:1;transform:none}}
+</style></head>
+<body>
+<canvas id="gl" aria-hidden="true"></canvas>
+<nav id="nv"><a class="logo" href="#hero">K<i>.</i>S</a><div><a href="#work">Work</a><a href="#about">About</a><a href="#stack">Stack</a><a href="#contact">Contact</a></div></nav>
+<main>
+<section id="hero"><p class="eb">B.Tech CSE, SRM University Sonipat, class of 2027</p><h1>I'M KUNAL</h1><p class="role">ML &amp; AI systems | Full-stack developer | Problem solver</p><p class="lead">Final-year CSE student building voice, retrieval and security systems, and the interfaces that make them usable.</p><div class="btns"><a class="b p" href="#work">View projects</a><a class="b" href="#contact">Get in touch</a></div></section>
+<section id="about" class="rv"><h2>The developer behind the work</h2><div class="two"><div><p>I'm a final-year Computer Science Engineering student at SRM University, Sonipat, specialising in machine learning, AI systems and full-stack development.</p><p>I like building things end to end: a model that scores a URL, a retrieval pipeline that cites its sources, a voice assistant split across GPU and CPU, and the React front end that ties it together.</p><p>Off campus I've been a Core Volunteer for Verge, SRM's tech fest, and gone through cohorts and workshops in cybersecurity, generative AI and Android development.</p></div><div class="g"><dl><div><dt>Degree</dt><dd>B.Tech, CSE</dd></div><div><dt>University</dt><dd>SRM University, Sonipat</dd></div><div><dt>Graduating</dt><dd>2027 (expected)</dd></div><div><dt>Location</dt><dd>Haryana, India</dd></div><div><dt>Languages</dt><dd>English, Hindi, German (basic)</dd></div></dl></div></div></section>
+<section id="stack" class="rv"><h2>Technology map</h2><div class="grid3" id="sk"></div></section>
+<section id="work" class="rv"><h2>Selected work</h2><div class="projects" id="pj"></div></section>
+<section id="edu" class="rv"><h2>Education &amp; experience</h2><div class="tl">
+<div><small>2023 - 2027 (expected)</small><h3>B.Tech, Computer Science &amp; Engineering</h3><p>SRM University, Sonipat - in progress, specialising in ML and full-stack development.</p></div>
+<div><small>2023</small><h3>12th (Senior Secondary), CBSE</h3><p>Hindu Vidyapeeth.</p></div>
+<div><small>2021</small><h3>10th (Secondary), CBSE</h3><p>Hindu Vidyapeeth.</p></div>
+<div><small>Experience</small><h3>Core Volunteer, Verge - SRM Tech Fest</h3><p>Managed data structures for event operations and system administration, kept accurate records for logistics, and coordinated through effective decision-making and adaptability.</p></div>
+</div></section>
+<section id="proof" class="rv"><h2>Certifications</h2><div class="tags">
+<span class="t">Volunteer at University Tech Fest - UTOPIIC</span>
+<span class="t">Freedom with AI Masterclass</span>
+<span class="t">The AI Revolution - SKILLO</span>
+<span class="t">Zero Devs Cybersecurity Cohort</span>
+<span class="t">Generative AI Mastermind - Outskill &amp; Moneycontrol</span>
+<span class="t">DevTown - MSME</span>
+<span class="t">AI for All - Intel &amp; Digital India</span>
+<span class="t">Android Development Workshop</span>
+</div></section>
+<section id="contact" class="rv"><h2>Start a conversation</h2><form id="f"><input name="name" aria-label="Your name" placeholder="Your name" required minlength="2" maxlength="80"><input name="email" type="email" aria-label="Your email" placeholder="Your email" required><textarea name="message" rows="5" aria-label="Message" placeholder="What would you like to build?" required minlength="10" maxlength="2000"></textarea><input class="hp" name="website" tabindex="-1" autocomplete="off" aria-hidden="true"><button class="b p" type="submit">Send message</button><p id="st" role="status"></p></form><div class="links" id="ln"></div></section>
+</main>
+<footer>&copy; 2026 Kunal Sharma. Built with React-ready HTML, Three.js and Node.</footer>
+<div id="md" role="dialog" aria-modal="true" aria-labelledby="mt"><div class="g"><button class="b x" id="mx" aria-label="Close project">Close</button><div id="mb"></div></div></div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+<script>
+const CONFIG={email:"kunal090206@gmail.com",phone:"+917015128139",github:"https://github.com/psycoks",linkedin:"https://linkedin.com/in/kunal-sharma-35882a28b"};
+const SK={"Languages":["Python","C","Java","JavaScript","SQL","HTML","CSS"],"Frameworks & libraries":["React","Next.js","Tailwind CSS","Flask","FastAPI","Three.js","Scikit-learn","Zustand"],"Core competencies":["Web Development","Data Structures","Machine Learning","RAG","Code Optimization"],"Soft skills":["Event Management","Decision-Making","Team Collaboration","Recordkeeping"]};
+const P=[
+{n:"01",t:"Jarvis - Voice Assistant",s:"Autonomous voice assistant with a hybrid GPU/CPU pipeline and a holographic UI.",tags:["Python","FastAPI","Ollama","Three.js"],a:"Reasoning and speech-to-text run on the GPU while audio synthesis runs on the CPU for responsive, local execution. A unified activation manager supports wake-words, push-to-talk and clap detection alongside a holographic Three.js interface.",f:["Wake-word, push-to-talk and clap activation","Holographic Three.js interface","Agentic OS automation with human-in-the-loop guardrails","Local file management"]},
+{n:"02",t:"Aura - Makeup E-Commerce",s:"Full-stack storefront with a responsive catalog and checkout flow.",tags:["React","Tailwind CSS","Zustand","React Router"],a:"React and Tailwind CSS build a responsive product catalog and checkout flow, with Zustand for state management and optimised component rendering for a smooth shopping experience.",f:["Responsive product catalog and checkout","Zustand state management","Client-side routing with React Router"]},
+{n:"03",t:"Phishing URL Detector",s:"ML-scored browser extension that flags risky links.",tags:["Python","Scikit-learn","Flask / FastAPI","JavaScript"],a:"A scikit-learn model scores webpages for phishing risk end to end, served through a lightweight Flask/FastAPI backend and surfaced through a functional Chrome extension.",f:["End-to-end ML risk scoring","Flask/FastAPI backend","Chrome extension in JavaScript"]},
+{n:"04",t:"Agentic RAG Web Search",s:"Perplexity-style engine that retrieves, synthesises and cites.",tags:["Next.js","TypeScript","Agentic RAG"],a:"Deconstructs complex queries, runs targeted web searches, and synthesises fully cited answers behind a sleek, responsive Next.js frontend.",f:["Query deconstruction","Targeted web retrieval","Fully cited answer synthesis"]},
+{n:"05",t:"LinkedIn Clone",s:"Front-end replica of LinkedIn's core interface.",tags:["React","TypeScript","Vite","Tailwind CSS","Zustand"],a:"A component-based rebuild of LinkedIn's core UI focused on UI/UX fidelity, built with a typed, Vite-powered React setup.",f:["Typed, component-based layout","Vite-powered React build","Zustand state management"]},
+{n:"06",t:"Interactive Tic-Tac-Toe",s:"Logic-based game managing turns and win conditions.",tags:["HTML","CSS","JavaScript"],a:"A small vanilla JavaScript app managing game state, turn logic, and win/draw detection.",f:["Turn-based game logic","Win/draw detection","No dependencies"]}];
+const $=s=>document.querySelector(s),tg=a=>a.map(x=>`<span class="t">${x}</span>`).join('');
+$('#sk').innerHTML=Object.entries(SK).map(([k,v])=>`<div class="g"><h3>${k}</h3><div class="tags">${tg(v)}</div></div>`).join('');
+$('#pj').innerHTML=P.map((p,i)=>`<button class="g card" data-i="${i}"><em>Project ${p.n}</em><h3>${p.t}</h3><p>${p.s}</p><div class="tags">${tg(p.tags)}</div></button>`).join('');
+$('#ln').innerHTML=`<a href="mailto:${CONFIG.email}">Email</a><a href="tel:${CONFIG.phone}">Call</a><a href="${CONFIG.github}" target="_blank" rel="noopener">GitHub</a><a href="${CONFIG.linkedin}" target="_blank" rel="noopener">LinkedIn</a>`;
+const md=$('#md');let last;
+function openM(i){const p=P[i];last=document.activeElement;$('#mb').innerHTML=`<h3 id="mt">${p.t}</h3><div class="tags">${tg(p.tags)}</div><h4>Overview</h4><p>${p.s}</p><h4>Architecture</h4><p>${p.a}</p><h4>Key features</h4><ul>${p.f.map(x=>`<li>${x}</li>`).join('')}</ul><div class="btns"><a class="b p" href="${CONFIG.github}" target="_blank" rel="noopener">View source on GitHub</a></div>`;md.classList.add('o');document.body.style.overflow='hidden';$('#mx').focus()}
+function closeM(){if(!md.classList.contains('o'))return;md.classList.remove('o');document.body.style.overflow='';last&&last.focus()}
+$('#pj').onclick=e=>{const c=e.target.closest('.card');c&&openM(+c.dataset.i)};
+$('#mx').onclick=closeM;md.onclick=e=>{e.target===md&&closeM()};
+addEventListener('keydown',e=>{e.key==='Escape'&&closeM()});
+const rm=matchMedia('(prefers-reduced-motion:reduce)').matches,gl=$('#gl'),nv=$('#nv');
+const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}}),{threshold:.1});
+document.querySelectorAll('.rv').forEach(s=>io.observe(s));
+addEventListener('scroll',()=>{nv.classList.toggle('s',scrollY>30);gl.style.opacity=Math.max(.12,1-scrollY/(innerHeight*.9))},{passive:true});
+$('#f').onsubmit=async e=>{e.preventDefault();const f=e.target,d=Object.fromEntries(new FormData(f)),st=$('#st');st.textContent='Sending...';
+try{const r=await fetch('/api/contact',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(d)});if(!r.ok)throw 0;st.textContent='Message sent. I will reply by email.';f.reset()}
+catch{st.textContent='Server not reachable. Opening your email app instead.';location.href=`mailto:${CONFIG.email}?subject=${encodeURIComponent('Portfolio message from '+d.name)}&body=${encodeURIComponent(d.message+'\n\n'+d.email)}`}};
+(function(){
+let R;try{R=new THREE.WebGLRenderer({canvas:gl,antialias:true,alpha:true})}catch(e){return}
+R.setPixelRatio(Math.min(devicePixelRatio,1.5));R.toneMapping=THREE.ACESFilmicToneMapping;
+const S=new THREE.Scene(),cam=new THREE.PerspectiveCamera(38,1,.1,50),G=new THREE.Group();cam.position.z=10;S.add(G);
+S.add(new THREE.AmbientLight(0x4a5f80,.7));
+const rim=new THREE.DirectionalLight(0x8fd3e8,.6);rim.position.set(-5,2,4);S.add(rim);
+const orb=new THREE.Vector3(.7,2.3,.6),L=new THREE.PointLight(0xffa640,3,14);L.position.copy(orb);G.add(L);
+const B=s=>new THREE.BoxGeometry(s,s,s),Y=(r,h)=>new THREE.CylinderGeometry(r,r,h,28);
+const defs=[[B(1.5),0x1f3550,[-1.7,1.4,-.6],.12],[B(2),0x4a3a30,[.2,-.1,0],.08],[B(1.4),0x151f2e,[1.6,-2,.5],.1],[Y(.35,1.5),0x0a0f16,[1.9,.9,-.4],.15],[Y(.3,1.3),0x3b1f1a,[-1.6,-1.9,.5],.13]];
+const meshes=defs.map(([g,c,p,v])=>{const m=new THREE.Mesh(g,new THREE.MeshStandardMaterial({color:c,roughness:.45,metalness:.2}));m.position.set(...p);m.userData={y:p[1],v,ph:Math.random()*6};m.rotation.set(Math.random(),Math.random(),0);G.add(m);return m});
+const o=new THREE.Mesh(new THREE.SphereGeometry(.3,32,32),new THREE.MeshBasicMaterial({color:0xffd7b5}));o.position.copy(orb);G.add(o);
+const cv=document.createElement('canvas');cv.width=cv.height=128;const cx=cv.getContext('2d'),gr=cx.createRadialGradient(64,64,0,64,64,64);
+gr.addColorStop(0,'rgba(255,190,120,.9)');gr.addColorStop(.4,'rgba(245,168,59,.25)');gr.addColorStop(1,'rgba(245,168,59,0)');cx.fillStyle=gr;cx.fillRect(0,0,128,128);
+const sp=new THREE.Sprite(new THREE.SpriteMaterial({map:new THREE.CanvasTexture(cv),blending:THREE.AdditiveBlending,depthWrite:false}));sp.scale.set(3.4,3.4,1);sp.position.copy(orb);G.add(sp);
+let bx=0,by=0,mx=0,my=0;
+function rs(){const w=innerWidth,h=innerHeight,wide=w>860;R.setSize(w,h,false);cam.aspect=w/h;cam.updateProjectionMatrix();bx=wide?2.6:0;by=wide?0:-1.7;G.scale.setScalar(wide?1:.55);G.position.set(bx,by,0);rm&&R.render(S,cam)}
+rs();addEventListener('resize',rs);
+addEventListener('pointermove',e=>{mx=e.clientX/innerWidth-.5;my=e.clientY/innerHeight-.5},{passive:true});
+gl.addEventListener('webglcontextlost',e=>e.preventDefault());
+const ck=new THREE.Clock();
+function draw(){const d=ck.getDelta(),t=ck.elapsedTime;
+if(scrollY<innerHeight*1.3){
+meshes.forEach(m=>{const u=m.userData;m.rotation.x+=d*u.v;m.rotation.y+=d*u.v*1.3;m.position.y=u.y+Math.sin(t*.6+u.ph)*.18});
+const k=Math.min(1,d*2);G.rotation.y+=(mx*.35-G.rotation.y)*k;G.rotation.x+=(my*.2-G.rotation.x)*k;
+G.position.set(bx,by+scrollY*.0025,0);R.render(S,cam)}
+if(!rm)requestAnimationFrame(draw)}
+draw();
+})();
+</script>
+</body></html>
